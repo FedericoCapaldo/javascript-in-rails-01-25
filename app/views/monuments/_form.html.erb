@@ -13,7 +13,7 @@
 
   <%= form.input :name %>
   <%= form.input :address %>
-  <%= form.input :opening_date, as: :date %>
+  <%= form.input :opening_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
 
   <div class="form-actions">
     <%= form.button :submit, class: "btn btn-primary" %>
