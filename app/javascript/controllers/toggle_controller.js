@@ -5,4 +5,9 @@ export default class extends Controller {
   connect() {
     console.log("Hello from toggle_controller.js")
   }
+
+
+  fire() {
+    console.log("Hello from fire()")
+  }
 }

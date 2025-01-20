@@ -13,7 +13,9 @@
   </div>
 
   <div data-controller="toggle" class="mt-5">
-    <button class="btn btn-outline-primary">Add a new monument</button>
-    <%= render "form", monument: @monument %>
+    <button class="btn btn-outline-primary" data-action="click->toggle#fire">Add a new monument</button>
+    <div class="d-none">
+      <%= render "form", monument: @monument %>
+    </div>
   </div>
 </div>
