@@ -1,32 +1,21 @@
-<%= form_with(model: monument) do |form| %>
+<%= simple_form_for monument do |form| %>
   <% if monument.errors.any? %>
-    <div style="color: red">
+    <div class="alert alert-danger">
       <h2><%= pluralize(monument.errors.count, "error") %> prohibited this monument from being saved:</h2>
 
       <ul>
-        <% monument.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <% monument.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
+  <%= form.input :name %>
+  <%= form.input :address %>
+  <%= form.input :opening_date, as: :date %>
 
-  <div>
-    <%= form.label :address, style: "display: block" %>
-    <%= form.text_field :address %>
-  </div>
-
-  <div>
-    <%= form.label :opening_date, style: "display: block" %>
-    <%= form.date_field :opening_date %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+  <div class="form-actions">
+    <%= form.button :submit, class: "btn btn-primary" %>
   </div>
 <% end %>
